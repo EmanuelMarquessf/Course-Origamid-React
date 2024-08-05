@@ -1,15 +1,19 @@
 import {useState, useEffect} from 'react'
 import Pokemon from '../components/Pokemon'
+import useLocalStorage from '../hooks/useLocalStorage'
+
 
 function Pokemons({ pokemonName }) {
-  const [pokemonArray, setPokemonArray] = useState(() => {
-    const localTeam = window.localStorage.getItem('localTeam');
-    return localTeam ? JSON.parse(localTeam) : [];
-  });
+  // const [pokemonArray, setPokemonArray] = useState(() => {
+  //   const localTeam = window.localStorage.getItem('localTeam');
+  //   return localTeam ? JSON.parse(localTeam) : [];
+  // });
 
-  useEffect(() => {
-    window.localStorage.setItem('localTeam', JSON.stringify(pokemonArray));
-  }, [pokemonArray]);
+  const [pokemonArray, setPokemonArray] = useLocalStorage('pokemonTeam', [])
+
+  // useEffect(() => {
+  //   window.localStorage.setItem('localTeam', JSON.stringify(pokemonArray));
+  // }, [pokemonArray]);
 
   useEffect(() => {
     if (pokemonName) {
