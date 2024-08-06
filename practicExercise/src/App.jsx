@@ -17,31 +17,18 @@ function App() {
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon?limit=2000&offset=0`)
     .then((response) => response.json())
-    .then((json) => setPokemonArray(json.results))
-  }, [])
+    .then((json) => {
+      const updatePokemonArray = json.results.map(pokemon => ({
+        id: pokemon.url.match(/\/(\d+)\/$/)[1],
+        name: pokemon.name,
+      }));
+      setPokemonArray(updatePokemonArray)
+    }
+  )}, [])
 
   useEffect(() => {
     if (input.length > 2) {
-      const filtered = pokemonArray.filter((pokemon) => pokemon.name.includes(input));
-      if(filterArray){
-        const fetchDetailsPromises = filtered.map((pokemon) =>
-          fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
-            .then((response) => response.json())
-            .then((json) => ({
-              ...pokemon,
-              sprite: json.sprites.front_default,
-            }))
-  
-        );
-        Promise.all(fetchDetailsPromises).then((pokemonWithDetails) => {
-          const finalFiltered = pokemonWithDetails.filter(
-            (pokemon) => pokemon.sprite !== null && pokemon.sprite !== ''
-          );
-          setFilterArray(finalFiltered);
-        });
-      }
-    } else {
-      setFilterArray([]);
+      setFilterArray(pokemonArray.filter((pokemon) => pokemon.name.includes(input)));
     }
   }, [input])
 
@@ -63,7 +50,7 @@ function App() {
             <div>
               {filterArray.map((pokemon) => (
                 <div className='flex flex-row w-full justify-center items-center bg-gray-100' key={pokemon.name} onClick={() => setPokemonName(pokemon.name)}>
-                  <img className='w-24' src={pokemon.sprite} alt="" />
+                  <img className="w-24" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} alt="" />
                   <p className='flex-1 text-lg'>{pokemon.name}</p>
                 </div>
               ))}
