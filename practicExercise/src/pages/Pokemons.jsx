@@ -4,16 +4,7 @@ import useLocalStorage from '../hooks/useLocalStorage'
 
 
 function Pokemons({ pokemonName }) {
-  // const [pokemonArray, setPokemonArray] = useState(() => {
-  //   const localTeam = window.localStorage.getItem('localTeam');
-  //   return localTeam ? JSON.parse(localTeam) : [];
-  // });
-
   const [pokemonArray, setPokemonArray] = useLocalStorage('pokemonTeam', [])
-
-  // useEffect(() => {
-  //   window.localStorage.setItem('localTeam', JSON.stringify(pokemonArray));
-  // }, [pokemonArray]);
 
   useEffect(() => {
     if (pokemonName) {
@@ -29,8 +20,8 @@ function Pokemons({ pokemonName }) {
 
   return (
     <div className='flex flex-row gap-4 flex-wrap m-4 bg-gray-300 w-[600px]'>
-      {pokemonArray.map((pokemon) => (
-        <Pokemon key={pokemon.id} pokemon={pokemon}/>
+      {pokemonArray.map((loadPokemon) => (
+        <Pokemon onButtonClick={() => setPokemonArray(pokemonArray.filter((pokemon) => pokemon.name !== loadPokemon.name))} key={loadPokemon.id} pokemon={loadPokemon} />
       ))}
     </div>
   )
