@@ -19,7 +19,7 @@ function Pokemons({ pokemonName }) {
   }, [pokemonName])
 
   return (
-    <div className='flex flex-row gap-4 flex-wrap m-4 bg-gray-300 w-[600px]'>
+    <div className='flex flex-row gap-4 flex-wrap m-4 bg-gray-300 w-[1220px]'>
       {pokemonArray.map((loadPokemon) => (
         <Pokemon onButtonClick={() => setPokemonArray(pokemonArray.filter((pokemon) => pokemon.name !== loadPokemon.name))} key={loadPokemon.id} pokemon={loadPokemon} />
       ))}

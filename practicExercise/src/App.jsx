@@ -29,12 +29,14 @@ function App() {
   useEffect(() => {
     if (input.length > 2) {
       setFilterArray(pokemonArray.filter((pokemon) => pokemon.name.includes(input)));
+    }else if(input.length == 0){
+      setFilterArray([]);
     }
   }, [input])
 
   return (
     <>
-      <div className='flex flex-col gap-4 w-[600px] h-auto m-4 p-4 bg-gray-300 rounded-sm shadow-sm items-center justify-center'>
+      <div className='flex flex-col gap-4 w-[1220px] h-auto m-4 p-4 bg-gray-300 rounded-sm shadow-sm items-center justify-center'>
         <h1 className='text-3xl font-pixelify font-medium'>Pokemon team creator</h1>
         <div className='flex flex-col gap-2 h-auto'>
           <div className='flex flex-row gap-2'>
@@ -47,11 +49,15 @@ function App() {
             />
           </div>
           {filterArray && (
-            <div>
-              {filterArray.map((pokemon) => (
-                <div className='flex flex-row w-full justify-center items-center bg-gray-100' key={pokemon.name} onClick={() => setPokemonName(pokemon.name)}>
-                  <img className="w-24" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} alt="" />
-                  <p className='flex-1 text-lg'>{pokemon.name}</p>
+            <div className='flex flex-row flex-wrap w-full'>
+              {filterArray.filter((item) => item.id < 2000).slice(0,4).map((pokemon) => (
+                <div className='flex flex-row justify-left items-center bg-gray-100 w-[240px]' key={pokemon.name} onClick={() => {
+                  setPokemonName(pokemon.name)
+                  setFilterArray('')
+                  setInput('')
+                }}>
+                  <img className="w-20 h-20" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} alt="" />
+                  <p className='text-lg capitalize'>{pokemon.name}</p>
                 </div>
               ))}
             </div>
