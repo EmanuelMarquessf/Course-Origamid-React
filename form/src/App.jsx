@@ -28,7 +28,6 @@ function App() {
       setError(null)
       return true
     }
-
   }
 
   function handleBlur({target}){
