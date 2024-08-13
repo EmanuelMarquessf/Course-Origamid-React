@@ -20,6 +20,7 @@ export default {
       },
       fontFamily: {
         'roboto' : ['roboto', 'sans-serif'] ,
+        'vt' : ['VT323', 'serif'],
         'pixelify' : ['Pixelify Sans', 'serif'],
         'Silkscreen' : 'silkscreen'
       }
