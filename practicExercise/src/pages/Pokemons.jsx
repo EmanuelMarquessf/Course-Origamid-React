@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import Pokemon from '../components/Pokemon'
 import useLocalStorage from '../hooks/useLocalStorage'
+import { fetchSelectedPokemon } from '../services/pokeapi.service'
 
 function Pokemons({ pokemonId, randomTeam }) {
   const [pokemonArray, setPokemonArray] = useLocalStorage('pokemonTeam', [])
@@ -36,13 +37,15 @@ function Pokemons({ pokemonId, randomTeam }) {
   }
 
   return (
-    <div className='flex flex-row gap-4 flex-wrap m-4 bg-gray-300 w-[1220px]'>
-      {pokemonArray.map((loadPokemon) => (
-        <Pokemon load={load} key={loadPokemon.id} onButtonClick={() => setPokemonArray(pokemonArray.filter((pokemon) => pokemon.name !== loadPokemon.name))}  pokemon={loadPokemon} />
-      ))}
-      {pokemonArray.length == 0 && (
-        <span>Ainda sem pokemons adicionados</span>
-      )}
+    <div className='flex items-center justify-center gap-4'>
+      <div className='grid grid-cols-3 gap-5  items-center justify-center h-screen'>
+        {pokemonArray.map((loadPokemon) => (
+          <Pokemon load={load} key={loadPokemon.id} onButtonClick={() => setPokemonArray(pokemonArray.filter((pokemon) => pokemon.name !== loadPokemon.name))}  pokemon={loadPokemon} />
+        ))}
+        {pokemonArray.length == 0 && (
+          <span>Ainda sem pokemons adicionados</span>
+        )}
+      </div>
     </div>
   )
 }
