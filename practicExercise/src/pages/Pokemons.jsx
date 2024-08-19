@@ -10,7 +10,11 @@ function Pokemons({ pokemonId, randomTeam }) {
   useEffect(() => {
     setLoad(true)
     if (pokemonId) {
-      fetchPokemonData(pokemonId)
+      const fetch = async() => {
+        const data = await fetchSelectedPokemon(pokemonId)
+        console.log(data)
+      }
+      fetch()
     }
   }, [pokemonId])
 

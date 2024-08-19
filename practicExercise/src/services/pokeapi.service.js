@@ -16,9 +16,9 @@ function FilterData(data) {
   }));
 }
 
-export async function fetchSelectedPokemon(pokemonName){
+export async function fetchSelectedPokemon(pokemonID){
   const data = fetch(
-    `${baseUrlPokeApi}pokemon/${pokemonName}`
+    `${baseUrlPokeApi}pokemon/${pokemonID}`
   ).then(response => response.json())
 
   return data
