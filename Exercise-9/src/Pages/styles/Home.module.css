@@ -1,0 +1,13 @@
+.home{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem
+}
+
+.img{
+  width: 10rem;
+}
+
+.name{
+  margin: .5rem 0;
+}
