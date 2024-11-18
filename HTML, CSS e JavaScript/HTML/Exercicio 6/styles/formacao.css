@@ -1,0 +1,178 @@
+.main-formacao{
+  background-color: #141414;
+  color: #ffffff;
+  margin-top: 100px;
+}
+
+.main-formacao-div{
+  max-width: 1200px;
+  margin: 0rem auto;
+  padding: 7rem 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.main-formacao .verticalTitle{
+  color: #000000;
+  max-width: 5ch;
+}
+
+.formacao{
+  display: grid;
+  gap: 3.75rem;
+}
+
+.formacao-text{
+  width: 40ch;
+  font-size: 1.5rem;
+  color: #A3A3A3;
+  line-height: 2rem;
+}
+
+.formacao-text strong{
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.formacao-Cards{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1000px;
+}
+
+.formacao-card{
+  background-color: #090909;
+  border: 1px solid #000000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+  border-radius: 5px;
+  position: relative;
+  flex: 1;
+}
+
+.formacao-card::before{
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(#b6f829, #67dd0a);
+  position: absolute;
+  left: -4px;
+  top: 45px;
+}
+
+.formacao-card div{
+  display: grid;
+  gap: 10px;
+}
+
+.card-tipo{
+  font-size: 14px;
+  color: #A3A3A3;
+  text-transform: uppercase;
+}
+
+.formacao-card h3{
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  font-weight: bold;
+  max-width: 10ch;
+}
+
+.card-instituicao{
+  font-size: 18px;
+  color: #A3A3A3;
+  text-transform: uppercase;
+
+}
+
+.formacao-outros{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.formacao-outros h3{
+  color: #8F8F8F;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+
+.formacao-outros h3::before
+{
+  content: '';
+  width: 25px;
+  height: 25px;
+  background-image: url('../assets/cursos.svg');
+  position: absolute;
+  left: -35px;
+}
+
+.formacao-outros ul{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+  max-width: 660px;
+}
+.formacao-outros ul li{
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.formacao-horario{
+  color: #8F8F8F;
+}
+
+.formacao-idiomas{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+  max-width: 660px;
+  position: relative;
+}
+
+
+.formacao-idiomas h3{
+  color: #8F8F8F;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+
+.formacao-idiomas h3::before
+{
+  content: '';
+  width: 25px;
+  height: 25px;
+  background-image: url('../assets/idiomas.svg');
+  position: absolute;
+  left: -35px;
+}
+
+.formacao-idiomas ul{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+  max-width: 660px;
+  color: #8F8F8F;
+  font-size: 18px;
+}
+
+.idioma{
+  color: #ffffff;
+}

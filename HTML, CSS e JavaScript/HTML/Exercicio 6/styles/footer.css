@@ -1,0 +1,26 @@
+footer{
+  background-color: #000000;
+  color: #ffffff;
+
+
+}
+.footer-container{
+  margin: 0 auto;
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17rem;
+  padding: 7.5rem;
+}
+
+.footer-desc{
+  font-size: 24px;
+  color: #CCCCCC;
+  line-height: 2rem;
+  max-width: 32ch;
+}
+
+.footer-dados span{
+  display: block;
+  font-size: 2rem;
+}

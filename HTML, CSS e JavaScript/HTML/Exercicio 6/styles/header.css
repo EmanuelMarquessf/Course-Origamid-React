@@ -1,0 +1,31 @@
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 9rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.itens-header{
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.itens-header a{
+  text-decoration: none;
+  color: #141414;
+  padding: 1rem 2rem;
+}
+
+@media (max-width: 800px) {
+  header{
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  .itens-header a{
+    background-color: #f5f5f5;
+  }
+}

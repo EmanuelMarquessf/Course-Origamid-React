@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merienda:wght@300..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+  --g1: #3A703A;
+  --g2: #2D662D;
+  --g3: #215C21;
+  --g4: #164C16;
+  --g5: #0C360C;
+  --g6: #072C07;
+  --g7: #042604;
+  --g8: #021E02;
+  --g9: #001300;
+  --g10: #000B00;
+
+  --bgColor: #F4F0BB;
+
+  --textWhite: #E6EFE7;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: var(--bgColor);
+
+}
+
+header{
+  margin: 1rem 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header img{
+  height: 7rem;
+}
+
+header ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+
+header li a{
+  font-family: Merienda;
+  text-transform: uppercase;
+  color: var(--g10);
+  text-decoration: none;
+  font-size: 20px;
+  padding: 1rem 2rem;
+  font-weight: bold;
+}
+
+main{
+  padding: 2.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7.5rem;
+}
+
+.headerMain{
+  display: grid;
+  grid-template-columns: 40rem 37.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 1rem 12rem;
+}
+
+.infoContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.infoContainer a{
+  background-color: var(--g1);
+  padding: 1rem 2rem;
+  color: var(--textWhite);
+  text-decoration: none;
+  font-family: Merriweather;
+  font-size: 1.25rem;
+  border-radius: 5px;
+}
+
+.titleDiv h1{
+  font-family: Merienda;
+  font-size: 5rem;
+  line-height: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.titleDiv span{
+  font-family: Merienda;
+  font-size: 2rem;
+  line-height: 2.625rem;
+}
+
+.headerMain p{
+  font-family: Merriweather;
+  line-height: 2rem;
+  font-size: 1.5rem;
+
+}
+
+.headerMain img{
+  width: 35rem;
+}
+
+.backSection{
+  background-color: var(--g1);
+  border-radius: 0 1000px 0 2000px;
+  height: 5000px;
+}
+
+.backSection div{
+  margin: 1rem 12rem;
+}
+
+.backSection div img{
+  max-width: 100%;
+  margin-top: 4rem;
+}
+
